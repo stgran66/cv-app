@@ -1,5 +1,21 @@
 import { useEffect, useState } from 'react';
-import { ReactComponent as FullyResponsiveIcon } from '../assets/images/fully-responsive-icon.svg';
+import { ReactComponent as ResponsiveIcon } from '../assets/images/icons/pc.svg';
+import { ReactComponent as DesignerIcon } from '../assets/images/icons/heart.svg';
+import { ReactComponent as SupportIcon } from '../assets/images/icons/support.svg';
+
+const icons: Record<string, React.ReactNode> = {
+  'fully responsive': <ResponsiveIcon />,
+  'ui/ux designer': <DesignerIcon />,
+  '24/7 support': <SupportIcon />,
+};
+
+const getIcon = (str: string) => {
+  const icon = icons[str];
+  if (!icon) {
+    return null;
+  }
+  return icon;
+};
 
 interface Service {
   id: string;
@@ -25,7 +41,7 @@ export const ServicesSection = () => {
     getServices();
   }, []);
   return (
-    <section className='pt-[130px] bg-bgSecondary flex flex-col items-center'>
+    <section className='py-[130px] w-[1170px] mx-auto flex flex-col items-center'>
       <p className='text-accent text-[24px] leading-[30px] font-bold uppercase'>
         What we do
       </p>
@@ -41,7 +57,7 @@ export const ServicesSection = () => {
           services.map(service => (
             <li key={service.id} className='flex flex-col items-center'>
               <div className='bg-accent rounded-full w-[100px] h-[100px] flex justify-center items-center'>
-                <FullyResponsiveIcon />
+                {getIcon(service.name)}
               </div>
               <h3 className='text-[36px] leading-[46px] font-semibold mt-[30px]'>
                 {service.name}
