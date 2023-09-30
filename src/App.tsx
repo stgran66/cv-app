@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
 import { HeroSection } from './components/Hero';
+import { ServicesSection } from './components/Services';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
           <Header />
           <HeroSection />
         </div>
+      </div>
+      <div className='w-[1170px] mx-auto'>
+        <ServicesSection />
       </div>
     </div>
   );
