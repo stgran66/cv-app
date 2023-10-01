@@ -11,7 +11,6 @@ const icons: Record<string, React.ReactNode> = {
 
 const getIcon = (str: string) => {
   const icon = icons[str];
-  console.log(icon);
   if (!icon) {
     return null;
   }
@@ -24,7 +23,6 @@ const getMonthYear = (date: string) => {
     month: 'long',
     year: 'numeric',
   });
-  console.log(displayDate);
   return displayDate;
 };
 
@@ -49,7 +47,6 @@ export const ExperienceSection = () => {
   useEffect(() => {
     async function getExperiences() {
       const data = await getData();
-      console.log(data);
       setExperiences(data);
     }
     getExperiences();
@@ -88,7 +85,7 @@ export const ExperienceSection = () => {
                 </p>
               </div>
             </div>
-
+            {/* TODO create object which binds title by experience id */}
             <h3 className='text-[20px] font-semibold leading-[24px] capitalize mt-[30px]'>
               title
             </h3>
