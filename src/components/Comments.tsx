@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
-import { PaginationButton } from './ui/PaginationButton';
+import { Pagination } from './ui/Pagination';
+import { fetchComments } from '../services/api';
 
-async function getData(order: string, page: number) {
-  const queryString = `orderby=createdAt&order=${order}&limit=4&page=${page}`;
-  const data = await fetch(
-    `https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/comments?${queryString}`
-  );
-  const parsedData = await data.json();
-  return parsedData;
-}
+const PAGE_SIZE = 4;
 
 interface Comment {
   id: string;
@@ -20,18 +14,27 @@ interface Comment {
 
 export const CommentsSection = () => {
   const [comments, setComments] = useState<Comment[] | []>([]);
-  const [activeSorting, setActiveSorting] = useState('newest');
+  const [sorting, setSorting] = useState('newest');
   // TODO get page from searchParams
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     async function getComments() {
-      const sortingOrder = activeSorting === 'newest' ? 'desc' : 'asc';
-      const data = await getData(sortingOrder, currentPage);
+      const sortingOrder = sorting === 'newest' ? 'desc' : 'asc';
+      const data = await fetchComments(currentPage, PAGE_SIZE, sortingOrder);
       setComments(data);
     }
     getComments();
-  }, [activeSorting, currentPage]);
+  }, [sorting, currentPage]);
+
+  useEffect(() => {
+    async function getCommentsTotalCount() {
+      const data = await fetchComments();
+      setTotalCount(data.length);
+    }
+    getCommentsTotalCount();
+  }, []);
 
   return (
     <section id='comments' className='py-[130px]  w-[1170px] mx-auto '>
@@ -41,37 +44,42 @@ export const CommentsSection = () => {
         </h2>
         <div className='text-[12px]'>
           <button
-            className={`${activeSorting === 'newest' ? null : 'text-accent'}`}
-            onClick={() => setActiveSorting('oldest')}
+            className={`${sorting === 'newest' ? null : 'text-accent'}`}
+            onClick={() => setSorting('oldest')}
           >
             oldest
           </button>{' '}
           |{' '}
           <button
-            className={`${activeSorting === 'newest' ? 'text-accent' : null}`}
-            onClick={() => setActiveSorting('newest')}
+            className={`${sorting === 'newest' ? 'text-accent' : null}`}
+            onClick={() => setSorting('newest')}
           >
             newest
           </button>
         </div>
 
-        <ul className='basis-[100%] mt-[40px]'>
-          {comments.map(comment => (
-            <li key={comment.id}>
-              <p className='text-[14px] leading-[24px] text-[#777777]'>
-                {comment.createdAt}
-              </p>
-              <h3 className='text-[20px] font-semibold leading-[24px] mt-[10px]'>
-                <span className='capitalize'>{comment.name}</span>{' '}
-                {comment.email}
-              </h3>
-              <p className='mt-[10px]'>{comment.content}</p>
-            </li>
-          ))}
+        <ul className='basis-[100%] '>
+          {comments &&
+            comments.map(comment => (
+              <li key={comment.id}>
+                <p className='text-[14px] leading-[24px] text-[#777777] mt-[40px]'>
+                  {comment.createdAt}
+                </p>
+                <h3 className='text-[20px] font-semibold leading-[24px] mt-[10px]'>
+                  <span className='capitalize'>{comment.name}</span>{' '}
+                  {comment.email}
+                </h3>
+                <p className='mt-[10px]'>{comment.content}</p>
+              </li>
+            ))}
         </ul>
-        <ul>
-          <PaginationButton active children={1} />
-        </ul>
+        <Pagination
+          totalCount={totalCount}
+          onPageChange={page => setCurrentPage(page)}
+          siblingCount={1}
+          currentPage={currentPage}
+          limit={PAGE_SIZE}
+        />
       </div>
     </section>
   );

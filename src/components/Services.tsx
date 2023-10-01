@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ReactComponent as ResponsiveIcon } from '../assets/images/icons/pc.svg';
 import { ReactComponent as DesignerIcon } from '../assets/images/icons/heart.svg';
 import { ReactComponent as SupportIcon } from '../assets/images/icons/support.svg';
+import { fetchServices } from '../services/api';
 
 const icons: Record<string, React.ReactNode> = {
   'fully responsive': <ResponsiveIcon />,
@@ -23,19 +24,11 @@ interface Service {
   description: string;
 }
 
-async function getData() {
-  const data = await fetch(
-    'https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/services'
-  );
-  const parsedData = await data.json();
-  return parsedData;
-}
-
 export const ServicesSection = () => {
   const [services, setServices] = useState<Service[] | []>([]);
   useEffect(() => {
     async function getServices() {
-      const data = await getData();
+      const data = await fetchServices();
       setServices(data);
     }
     getServices();

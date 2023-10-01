@@ -4,6 +4,7 @@ import { CommentsSection } from '../Comments';
 import { Footer } from '../Footer';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { AddCommentSection } from '../AddComment';
 
 interface CommonLayoutProps {
   children?: React.ReactNode;
@@ -23,6 +24,7 @@ export const CommonLayout = ({ children }: CommonLayoutProps) => {
         <Outlet />
       </Suspense>
       <CommentsSection />
+      <AddCommentSection />
       <div className='bg-accent'>
         <Footer />
       </div>

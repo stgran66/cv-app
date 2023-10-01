@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { ReactComponent as DribbleIcon } from '../assets/images/icons/dribble.svg';
 import { ReactComponent as BehanceIcon } from '../assets/images/icons/behance.svg';
+import { fetchExperience } from '../services/api';
 
 const icons: Record<string, React.ReactNode> = {
   Behancer: <BehanceIcon />,
@@ -34,19 +35,11 @@ interface Experience {
   to: string;
 }
 
-async function getData() {
-  const data = await fetch(
-    'https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/experience'
-  );
-  const parsedData = await data.json();
-  return parsedData;
-}
-
 export const ExperienceSection = () => {
   const [experiences, setExperiences] = useState<Experience[] | []>([]);
   useEffect(() => {
     async function getExperiences() {
-      const data = await getData();
+      const data = await fetchExperience();
       setExperiences(data);
     }
     getExperiences();
