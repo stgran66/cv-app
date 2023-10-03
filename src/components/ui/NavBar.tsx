@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <nav className='flex justify-between'>
       <ul className='flex items-center gap-13'>
-        <li>
+        <li className='hover:text-accent transition-all duration-200'>
           <NavLink
             className={({ isActive }) => (isActive ? 'text-accent' : '')}
             to='/'
@@ -15,7 +15,7 @@ export const NavBar = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        <li className='hover:text-accent transition-all duration-200'>
           <NavLink
             className={({ isActive }) => (isActive ? 'text-accent' : '')}
             to='services'
@@ -23,7 +23,7 @@ export const NavBar = () => {
             Services
           </NavLink>
         </li>
-        <li>
+        <li className='hover:text-accent transition-all duration-200'>
           <NavLink
             className={({ isActive }) => (isActive ? 'text-accent' : '')}
             to='experience'
@@ -33,7 +33,7 @@ export const NavBar = () => {
         </li>
         <li>
           <HashLink smooth to='#comments'>
-            <Button buttonStyle='light'>Comments</Button>
+            <Button>Comments</Button>
           </HashLink>
         </li>
       </ul>

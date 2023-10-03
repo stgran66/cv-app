@@ -74,9 +74,7 @@ export const CommentForm = () => {
         }}
       />
 
-      <Button type='submit' buttonStyle='light'>
-        Send
-      </Button>
+      <Button type='submit'>Send</Button>
       <div className='w-[100%]'>
         {fields.map(field => (
           <ErrorMessage

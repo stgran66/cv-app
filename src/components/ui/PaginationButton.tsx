@@ -9,7 +9,7 @@ export const PaginationButton = ({
 }: PaginationButtonProps) => {
   return (
     <button
-      className={`w-5 h-6 text-textPrimary ${
+      className={`w-5 h-6 text-textPrimary hover:bg-accent transition-all duration-200 ${
         active ? 'bg-accent' : 'bg-slate-700'
       }`}
     >

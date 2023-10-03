@@ -1,15 +1,12 @@
 interface ButtonProps {
   children: React.ReactNode;
-  buttonStyle: 'light' | 'dark';
   type?: 'submit' | 'button';
 }
 
-export const Button = ({ children, buttonStyle, type }: ButtonProps) => {
+export const Button = ({ children, type }: ButtonProps) => {
   return (
     <button
-      className={`w-buttonWidth h-8 ${
-        buttonStyle === 'light' && 'bg-accent && '
-      } text-textPrimary`}
+      className={`w-buttonWidth h-8 bg-accent text-textPrimary hover:bg-transparent hover:border hover:border-accent transition-all duration-200`}
       type={type ? type : 'button'}
     >
       {children}
