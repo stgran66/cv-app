@@ -1,5 +1,6 @@
 {
-  "name": "softblue",
+  "name": "cv-app",
+  "homepage": "https://stgran66.github.io/cv-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

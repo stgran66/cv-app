@@ -9,8 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* TODO add basename for github deploy */}
-    <BrowserRouter>
+    <BrowserRouter basename='cv-app'>
       <App />
     </BrowserRouter>
   </React.StrictMode>
