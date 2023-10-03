@@ -3,7 +3,7 @@ import { NavBar } from 'components/ui';
 
 export const Header = () => {
   return (
-    <header className='w-[1170px] mx-auto flex justify-between py-[70px]'>
+    <header className='w-container mx-auto flex justify-between py-11'>
       <Logo />
       <NavBar />
     </header>

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
-import { CommonLayout } from './components/layout/CommonLayout';
+import { CommonLayout } from 'components/layout';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ExperiencePage = lazy(

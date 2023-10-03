@@ -7,9 +7,9 @@ interface ButtonProps {
 export const Button = ({ children, buttonStyle, type }: ButtonProps) => {
   return (
     <button
-      className={`w-[170px] h-[48px] ${
+      className={`w-buttonWidth h-8 ${
         buttonStyle === 'light' && 'bg-accent && '
-      } text-[#fafafa]`}
+      } text-textPrimary`}
       type={type ? type : 'button'}
     >
       {children}

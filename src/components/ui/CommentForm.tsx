@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 
-import { Button, Input, TextArea } from './';
+import { Button, Input, TextArea } from 'components/ui';
 import { postComment } from 'services/mockapi';
 
 export interface FormValues {
@@ -28,7 +28,7 @@ export const CommentForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='text-[black] mt-[40px] flex flex-wrap justify-between gap-10'
+      className='text-black mt-7 flex flex-wrap justify-between gap-7'
     >
       <Input
         type='text'
@@ -83,7 +83,7 @@ export const CommentForm = () => {
             key={field}
             errors={errors}
             name={field}
-            render={({ message }) => <p className='text-[red]'>{message}</p>}
+            render={({ message }) => <p className='text-red-600'>{message}</p>}
           />
         ))}
       </div>

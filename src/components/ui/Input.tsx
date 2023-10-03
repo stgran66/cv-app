@@ -23,7 +23,7 @@ export const Input = ({
       placeholder={placeholder ? placeholder : ''}
       name={name}
       {...(register ? { ...register(name, registerOptions) } : null)}
-      className='w-[45%] bg-transparent border border-[white] p-[10px] placeholder:text-[#777777] text-textPrimary'
+      className='w-[45%] bg-transparent border border-[white] p-3 placeholder:text-textSecondary text-textPrimary'
     />
   );
 };

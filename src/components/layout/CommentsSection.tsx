@@ -1,7 +1,7 @@
 import { useComment } from 'hooks';
 import { PAGE_SIZE } from 'data';
 import { Pagination, Sorting } from 'components/ui';
-import { CommentCard } from './';
+import { CommentCard } from 'components/layout';
 
 export const CommentsSection = () => {
   const {
@@ -14,11 +14,9 @@ export const CommentsSection = () => {
   } = useComment();
 
   return (
-    <section id='comments' className='py-[130px]  w-[1170px] mx-auto '>
+    <section id='comments' className='py-sectionPadding  w-container mx-auto '>
       <div className='flex justify-between  w-[40%] mx-auto items-center flex-wrap'>
-        <h2 className='text-[20px] leading-[28px] capitalize font-semibold'>
-          comments
-        </h2>
+        <h2 className='text-xl leading-m capitalize font-semibold'>comments</h2>
         <Sorting onSortingChange={onSortingChange} sorting={sorting} />
 
         <ul className='basis-[100%] '>

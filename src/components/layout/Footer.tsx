@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className='w-[1170px] h-[60px] mx-auto text-center text-[14px] leading-[20px] py-[20px]'>
+    <footer className='w-container h-10 mx-auto text-center text-s leading-xs py-4'>
       Copyright &#169; 2019 <span className='font-semibold'>Robi-pixel</span>{' '}
       All Right Reserved.
     </footer>

@@ -7,7 +7,7 @@ import {
   CommentsSection,
   Footer,
   AddCommentSection,
-} from './';
+} from 'components/layout';
 
 export const CommonLayout = () => {
   return (

@@ -1,5 +1,4 @@
-import { ServicesSection } from './components/ServicesSection';
-import { ExperienceSection } from './components/ExperienceSection';
+import { ServicesSection, ExperienceSection } from 'pages/HomePage/components';
 
 const HomePage = () => {
   return (

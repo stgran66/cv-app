@@ -1,5 +1,5 @@
 import { usePagination, DOTS } from 'hooks';
-import { PaginationButton } from './';
+import { PaginationButton } from 'components/ui';
 
 interface PaginationProps {
   onPageChange: React.Dispatch<React.SetStateAction<number>>;
@@ -29,7 +29,7 @@ export const Pagination = ({
   }
 
   return (
-    <ul className='flex gap-[5px] mt-[40px]'>
+    <ul className='flex gap-2 mt-7'>
       {paginationRange.map((pageNumber, idx) => {
         if (pageNumber === DOTS) {
           return (

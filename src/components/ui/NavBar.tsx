@@ -6,7 +6,7 @@ import { Button } from './Button';
 export const NavBar = () => {
   return (
     <nav className='flex justify-between'>
-      <ul className='flex items-center gap-20'>
+      <ul className='flex items-center gap-13'>
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? 'text-accent' : '')}

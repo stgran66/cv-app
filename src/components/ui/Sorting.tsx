@@ -5,7 +5,7 @@ interface SortingProps {
 
 export const Sorting = ({ sorting, onSortingChange }: SortingProps) => {
   return (
-    <div className='text-[12px]'>
+    <div className='text-xs'>
       <button
         className={`${sorting === 'asc' && 'text-accent'}`}
         onClick={() => onSortingChange('asc')}

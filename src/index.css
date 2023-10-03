@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply font-body text-[15px] text-textPrimary;
+  @apply font-body text-m text-textPrimary;
 }
 
 .hero-bg {
@@ -16,5 +16,5 @@ body {
 }
 
 .section-header {
-  @apply text-[36px] leading-[46px] capitalize font-semibold;
+  @apply text-3xl leading-2xl capitalize font-semibold;
 }

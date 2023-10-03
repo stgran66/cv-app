@@ -19,7 +19,7 @@ export const TextArea = ({
     <textarea
       placeholder={placeholder ? placeholder : ''}
       {...(register ? { ...register(name, registerOptions) } : null)}
-      className='w-[100%] h-[100px] bg-transparent border border-[white] p-[10px] placeholder:text-[#777777] text-textPrimary resize-none'
+      className='w-[100%] h-13 bg-transparent border border-[white] p-3 placeholder:text-textSecondary text-textPrimary resize-none'
     />
   );
 };
