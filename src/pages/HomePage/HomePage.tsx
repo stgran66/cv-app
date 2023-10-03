@@ -1,5 +1,5 @@
-import { ServicesSection } from '../components/Services';
-import { ExperienceSection } from '../components/Experience';
+import { ServicesSection } from './components/ServicesSection';
+import { ExperienceSection } from './components/ExperienceSection';
 
 const HomePage = () => {
   return (

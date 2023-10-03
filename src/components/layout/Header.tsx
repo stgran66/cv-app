@@ -1,5 +1,5 @@
-import { ReactComponent as Logo } from '../assets/images/icons/logo.svg';
-import { NavBar } from './NavBar';
+import { ReactComponent as Logo } from 'assets/images/icons/logo.svg';
+import { NavBar } from 'components/ui';
 
 export const Header = () => {
   return (

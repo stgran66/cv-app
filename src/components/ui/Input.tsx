@@ -1,5 +1,6 @@
 import { UseFormRegister, RegisterOptions } from 'react-hook-form';
-import { FormValues } from '../CommentForm';
+
+import { FormValues } from './CommentForm';
 
 interface InputProps {
   type: string;

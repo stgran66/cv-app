@@ -1,5 +1,5 @@
-import { usePagination, DOTS } from '../../hooks/usePagination';
-import { PaginationButton } from './PaginationButton';
+import { usePagination, DOTS } from 'hooks';
+import { PaginationButton } from './';
 
 interface PaginationProps {
   onPageChange: React.Dispatch<React.SetStateAction<number>>;

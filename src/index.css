@@ -9,3 +9,12 @@ html {
 body {
   @apply font-body text-[15px] text-textPrimary;
 }
+
+.hero-bg {
+  @apply h-[980px] bg-[url('./assets/images/hero-bg-image.png'),_url('./assets/images/hero-bg.png')] bg-no-repeat
+        bg-[position:right_bottom,center] desktop:bg-[position:right_15%_bottom,_center];
+}
+
+.section-header {
+  @apply text-[36px] leading-[46px] capitalize font-semibold;
+}

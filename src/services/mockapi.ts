@@ -1,4 +1,5 @@
-const BASE_URL = 'https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api';
+import { MOCKAPI_BASE_URL as BASE_URL } from 'data';
+import type { Comment } from 'types/shared';
 
 export const fetchComments = async (
   page?: number,
@@ -43,13 +44,7 @@ export const fetchExperience = async () => {
   }
 };
 
-interface postCommentProps {
-  name: string;
-  email: string;
-  content: string;
-}
-// TODO just import type comment
-export const postComment = async (comment: postCommentProps) => {
+export const postComment = async (comment: Comment) => {
   try {
     console.log(comment);
     const url = new URL(`${BASE_URL}/comments`);

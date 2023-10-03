@@ -1,3 +1,5 @@
+import { designations } from 'data/designations';
+
 export const HeroSection = () => {
   return (
     <section className='pt-[200px] w-[1170px] mx-auto'>
@@ -7,10 +9,9 @@ export const HeroSection = () => {
         Pathan <br /> Creative UI/UX Designer
       </h1>
       <ol className='list-decimal list-inside mt-[55px]'>
-        <li className='leading-[38px]'>UI/UX Design</li>
-        <li className='leading-[38px]'>Product Design</li>
-        <li className='leading-[38px]'>Web Design</li>
-        <li className='leading-[38px]'>Front-end Design</li>
+        {designations.map(designation => (
+          <li className='leading-[38px]'>{designation}</li>
+        ))}
       </ol>
     </section>
   );

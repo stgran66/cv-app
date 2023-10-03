@@ -5,6 +5,9 @@ module.exports = {
     fontFamily: {
       body: ['Poppins', 'sans-serif'],
     },
+    screens: {
+      desktop: '1280px',
+    },
 
     extend: {
       colors: {
@@ -13,11 +16,8 @@ module.exports = {
         bgPrimary: '#06101a',
         bgSecondary: '#050d16',
       },
-      dropShadow: {
-        '3xl': '0 25px 50px -12px rgb(0 0 0 / 0.75);',
-      },
       boxShadow: {
-        '3xl': '13px 27px 30px 0px rgba(6, 16, 26, 0.75)',
+        card: '0 0 30px 10px rgba(4,11,18,0.75)',
       },
     },
   },

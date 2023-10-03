@@ -1,9 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { Button } from './ui/Button';
-import { Input } from './ui/Input';
-import { TextArea } from './ui/TextArea';
 import { ErrorMessage } from '@hookform/error-message';
-import { postComment } from '../services/api';
+
+import { Button, Input, TextArea } from './';
+import { postComment } from 'services/mockapi';
 
 export interface FormValues {
   name: string;
